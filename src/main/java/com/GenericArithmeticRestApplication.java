@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 import com.gen.GetAddRequest;
+import com.gen.GetDivRequest;
+import com.gen.GetMulRequest;
+import com.gen.GetSubRequest;
 
 @SpringBootApplication
 public class GenericArithmeticRestApplication {
@@ -21,8 +24,24 @@ public class GenericArithmeticRestApplication {
 		return marshaller;
 
 	}
+
 	@Bean
-	public GetAddRequest getAddRequest(){
+	public GetAddRequest getAddRequest() {
 		return new GetAddRequest();
+	}
+
+	@Bean
+	public GetSubRequest getSubRequest() {
+		return new GetSubRequest();
+	}
+
+	@Bean
+	public GetMulRequest getMulRequest() {
+		return new GetMulRequest();
+	}
+
+	@Bean
+	public GetDivRequest getDivRequest() {
+		return new GetDivRequest();
 	}
 }

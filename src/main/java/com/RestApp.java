@@ -15,9 +15,11 @@ import com.gen.GetAddRequest;
 import com.gen.GetAddResponse;
 
 @RestController
+@RequestMapping("/arithmetic")
 public class RestApp {
 	private static final QName SERVICE_NAME = new QName("http://spring.io/guides/gs-producing-web-service",
 			"arithmeticPortService");
+	//default location http://localhost:9999/arithmetic
 	private static ArithmeticPort BACKEND = null;
 	@Autowired
 	GetAddRequest getAddRequest;
@@ -37,7 +39,7 @@ public class RestApp {
 		return BACKEND;
 	}
 
-	@RequestMapping("/hello/{base}/{number1}/{number2}")
+	@RequestMapping("/add/{base}/{number1}/{number2}")
 	public String getAdd(@PathVariable("base") String base, @PathVariable("number1") String number1,
 			@PathVariable("number2") String number2) {
 		System.out.println("%%%%%%%%%%getADD"+base+number1+number2);
